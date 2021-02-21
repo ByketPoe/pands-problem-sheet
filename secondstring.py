@@ -9,11 +9,14 @@
 # But let's not get too carried away.
 inputText = input("Please enter your sentence: ")
 
-# Need to reverse the text
+# String Slicing is used to remove every second letter from the string and to reverse the string. 
+# The first input tells the program which index to start with, the second index denotes which index to end with.
+# In this case, we want all characters from the string to be take into account, so these are left blank.
+# The last input tells the program how many indexes to step over each time, so 1 would step through one at a time, 3 would take every 3rd character etc.
+# In our case, we want every second character, so the input is 2. 
+# The minus in front of the 2 reverses the direction in which the string is sliced, starting at the end and moving backwards. 
+# This returns the reverse of every second character in the string. 
+result = inputText[::-2]
 
-
-# Need to remove every other character.
-
-
-# Output result
-print()
+# The result is output using the print() function. 
+print(result)
