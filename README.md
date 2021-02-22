@@ -15,10 +15,13 @@ Week 2 bmi.py
 Week 3 secondstring.py
     Explanation of code:
         Strings are an example of something that is iterable i.e. a sequence of data. Iterable data types use numbers called indexes to refer to the position of the data within the sequence, starting at 0. When referring to indexes in reverse, the index starts at -1. 
+        
         This program uses string slicing to return every second character of a string in reverse. String slicing uses the indexes of a string to determine what characters to remove and which to keep, and were found at the links below. 
         String slicing works in the following way, where stringVariable contains a string:
             stringVariable[<start>:<stop>:<step>]
+        
         An iterable (in this case, a string) followed by square brackets means that the indexes of the iterable are being used to refer to the contents. Slicing uses the indexes to determine where to start, stop and step through. So for example someString[3:8:2] would return every second character from the string from index 3 up to (but not including) index 8. A minus number reverses the direction of the indexes. 
+        
         In this program, string slicing is used to return every second character in a string in reverse order.
     References:
         Slicing Strings:    https://www.w3schools.com/python/python_strings_slicing.asp
@@ -27,7 +30,13 @@ Week 3 secondstring.py
 
 Week 4 collatz.py
     Explanation of code:
-
+        The sample output in the question shows the numbers as integers, so the input number is cast as an integer and integer division is used in the calculation. A while loop checks the current value of the input initially and after each time the calculations are done. The while loop terminates once the value reaches 1. 
+        
+        Within the while loop, an if statement checks if the value is even or odd. The remainder (modulus [%]) of the input value when divided by 2 is calculated to determine if it is odd or even. If it is even, the remainder will be 0, otherwise it is odd. The if statment executes the calculation to divide the value by 2 if it is even, otherwise the else statement executes the multiplication by 3 and addition of 1 to the value. Because there are only two possible outcomes from the if statement (the value is odd or even) there is no need to check again using an elif statement. 
+        
+        By adding 1 to the odd value, the value will always eventually reduce down to 1 by being divided by 2 on the next iteration as it will be even. This ensures the while loop does not execute infinitely. 
+        
+        The sample output given in the question showed the calculated values in a row on one line. I decided the best way to replicate this would be to create a list to hold all of the values in. The initial value entered is added to the list when it is initially created. After the calculations are done on the value, the new value is also added to the list at the end of every iteration of the loop. This list is then printed at the end to show the results.
     References:
 
 
