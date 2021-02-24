@@ -20,4 +20,6 @@
 
 import datetime
 
-print(datetime.datetime.now())
+now = datetime.datetime.now()
+# if you do %w instead of %A, will return number corresponding to day 0 = Sun, 6 = Saturday etc
+print(now.strftime("%A"))
