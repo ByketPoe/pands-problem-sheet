@@ -41,3 +41,6 @@ Week 4 collatz.py
 
 
 Week 5 weekday.py
+    Explanation of code:
+
+    References:

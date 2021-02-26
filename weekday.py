@@ -20,6 +20,21 @@
 
 import datetime
 
+daysOfWeek = {"0": ["Sunday", "It is the weekend, yay!"], 
+"1": ["Monday", "Yes, unfortunately today is a weekday"], 
+"2": ["Tuesday", "Yes, unfortunately today is a weekday"], 
+"3": ["Wednesday", "Yes, unfortunately today is a weekday"], 
+"4": ["Thursday", "Yes, unfortunately today is a weekday"], 
+"5": ["Friday", "Yes, unfortunately today is a weekday"], 
+"6": ["Saturday", "It is the weekend, yay!"]}
+
 now = datetime.datetime.now()
+day = now.strftime("%w")
+
+result = daysOfWeek[day][1]
+print(result)
+
 # if you do %w instead of %A, will return number corresponding to day 0 = Sun, 6 = Saturday etc
-print(now.strftime("%A"))
+#print(now.strftime("%A"))
+#print(day)
+#print(len(daysOfWeek))
