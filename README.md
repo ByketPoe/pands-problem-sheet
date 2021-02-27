@@ -42,5 +42,6 @@ Week 4 collatz.py
 
 Week 5 weekday.py
     Explanation of code:
-
+        The datetime module is used for two functions in the code; the function to obtain the current date and the function to convert it to show the day of the week. The code uses a dictionary to store the days of the week and a corresponding message if it is a weekday or weekend. The key for each item is a number (as a string) from 0-6 and corresponds to a numbering system used in the datetime module to refer to the days of the week, where 0 = Sunday, 1 = Monday etc. The values are lists comprised of two items, the text of the day name and the corresponding message. This makes it easier to change the code if I wanted it to print the day instead of the message. 
     References:
+        https://www.w3schools.com/python/python_datetime.asp
