@@ -15,14 +15,23 @@
 # This is a more difficult task than some of the others, but will be marked equally, so only do as much work on this as you feel comfortable.
 
 def sqrt(n, i, r):
+
     x1 = i 
     xn = x1
     roundedxn = 0.0
 
-    while roundedxn != round (n, r):
-        fx = xn**2 - n**2
+    while round(abs(xn**2 - n), 2) > 0.001:
+        print("values are: ", round(xn**2, r), round(n, r))
+        print("difference is: ", round(abs(round(xn**2, r) - round (n, r)), 2))
+        fx = xn**2 - n
         fdx = 2*xn
         xnplus1 = xn - (fx/fdx)
         xn = xnplus1
         roundedxn = round(xn, r)
+        print("roundedxn is: ", roundedxn)
+        print("xn is: ", xn)
+        print("difference2 is: ", round(abs(xn**2 - n), 2))
     
+    return xn
+
+print(sqrt(7.0, 3, 2))
