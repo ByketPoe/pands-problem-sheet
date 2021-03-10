@@ -18,19 +18,19 @@ def sqrt(n, i, r):
 
     x1 = i 
     xn = x1
-    roundedxn = 0.0
+    #roundedxn = 0.0
 
-    while round(abs(xn**2 - n), 2) > 0.001:
+    while abs(xn**2 - n) > 0.0001:
         print("values are: ", round(xn**2, r), round(n, r))
-        print("difference is: ", round(abs(round(xn**2, r) - round (n, r)), 2))
+        print("difference is: ", abs(xn**2 - n))
         fx = xn**2 - n
         fdx = 2*xn
         xnplus1 = xn - (fx/fdx)
         xn = xnplus1
-        roundedxn = round(xn, r)
-        print("roundedxn is: ", roundedxn)
+        #roundedxn = round(xn, r)
+        #print("roundedxn is: ", roundedxn)
         print("xn is: ", xn)
-        print("difference2 is: ", round(abs(xn**2 - n), 2))
+        print("difference2 is: ", abs(xn**2 - n))
     
     return xn
 
