@@ -8,9 +8,10 @@ def doAddOne(num):
     num += 1
     return num
 
-# The name of the file is assigned to a variable. 
+# The user is asked for the name of the file using the input function. The string input is assigned to a variable. 
+# There is no need to cast the input as text file names are handled as strings.
 # A variable to track the number of "e"s is created and set to 0.
-fileToParse = "fields.txt"
+fileToParse = input("Please enter the name of the text file (including the file extension): ")
 count = 0
 
 # A try/except exception handler is used to attempt to execute the code assuming the file name exists.
