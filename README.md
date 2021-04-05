@@ -30,8 +30,9 @@ An iterable (in this case, a string) followed by square brackets means that the 
         
 In this program, string slicing is used to return every second character in a string in reverse order.
 #### References:
-Slicing Strings - https://www.w3schools.com/python/python_strings_slicing.asp
-https://www.digitalocean.com/community/tutorials/how-to-index-and-slice-strings-in-python-3
+Slicing Strings 
+- https://www.w3schools.com/python/python_strings_slicing.asp
+- https://www.digitalocean.com/community/tutorials/how-to-index-and-slice-strings-in-python-3
 
 
 ### Week 4 collatz.py
@@ -79,6 +80,7 @@ A for loop is used to iterate through the lines in the file, and a nested for lo
         
 #### References:
 The 7.1 Lecture video (around the 10.30 mark) showed how to use a for loop to iterate through a text file. I decided to test to see if a nested loop could access the letters within the line and it worked. 
+
 The .lower() function - https://www.programiz.com/python-programming/methods/string/lower
 
 ### Week 8 plottask.py
