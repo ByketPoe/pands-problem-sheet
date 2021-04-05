@@ -2,6 +2,7 @@
 ## Emma Farrell's Submission for PandS problem sheets
 
 ### Week 2 bmi.py 
+The purpose of this program is to calculate bmi based on user inputs of height and weight
 #### Explanation of code:
 This program works by taking in height and weight measurements from the user and using them to calculate bmi. The input and print functions and casting data to desired data type (in this case, float) have been covered in lecture material. The round function was found on W3 schools at the link in the reference. This function works by taking in the number to be rounded as well as the number of decimal places that is required: 
             
@@ -10,12 +11,13 @@ This program works by taking in height and weight measurements from the user and
 These calculations work by assigning the values inputted and calculated to variables, which has been covered in lecture material. 
 The formula for BMI is weight divided by height squared, and is taken from the link in the references.
 #### References:
-Round function:     https://www.w3schools.com/python/ref_func_round.asp
+Round function - https://www.w3schools.com/python/ref_func_round.asp
 
-BMI formula:        https://www.wolframalpha.com/input/?i=bmi
+BMI formula - https://www.wolframalpha.com/input/?i=bmi
         
 
 ### Week 3 secondstring.py
+The purpose of this program is to take in text and return every second letter in reverse order.
 #### Explanation of code:
 Strings are an example of something that is iterable i.e. a sequence of data. Iterable data types use numbers called indexes to refer to the position of the data within the sequence, starting at 0. When referring to indexes in reverse, the index starts at -1. 
         
@@ -28,11 +30,12 @@ An iterable (in this case, a string) followed by square brackets means that the 
         
 In this program, string slicing is used to return every second character in a string in reverse order.
 #### References:
-Slicing Strings:    https://www.w3schools.com/python/python_strings_slicing.asp
-                    https://www.digitalocean.com/community/tutorials/how-to-index-and-slice-strings-in-python-3
+Slicing Strings - https://www.w3schools.com/python/python_strings_slicing.asp
+https://www.digitalocean.com/community/tutorials/how-to-index-and-slice-strings-in-python-3
 
 
 ### Week 4 collatz.py
+The purpose of this program is to take a value from a user and output the values of a series of calculations performed on that number.
 #### Explanation of code:
 The sample output in the question shows the numbers as integers, so the input number is cast as an integer and integer division is used in the calculation. A while loop checks the current value of the input initially and after each time the calculations are done. The while loop terminates once the value reaches 1. 
         
@@ -43,25 +46,28 @@ By adding 1 to the odd value, the value will always eventually reduce down to 1 
 The sample output given in the question showed the calculated values in a row on one line. I decided the best way to replicate this would be to create a list to hold all of the values in. The initial value entered is added to the list when it is initially created. After the calculations are done on the value, the new value is also added to the list at the end of every iteration of the loop. This list is then printed at the end to show the results.
 
 #### References:
-
+There are no references for this task as I was able to complete it using the notes from the course. 
 
 ### Week 5 weekday.py
+The purpose of this program is to return a message corresponding the day of the week it is today.
 #### Explanation of code:
 The datetime module is used for two functions in the code; the function to obtain the current date and the function to convert it to show the day of the week. The code uses a dictionary to store the days of the week and a corresponding message if it is a weekday or weekend. The key for each item is a number (as a string) from 0-6 and corresponds to a numbering system used in the datetime module to refer to the days of the week, where 0 = Sunday, 1 = Monday etc. The values are lists comprised of two items, the text of the day name and the corresponding message. This makes it easier to change the code if I wanted it to print the day instead of the message. 
 
 #### References:
-https://www.w3schools.com/python/python_datetime.asp - the Datetime module, which contains the functions .now() and .strftime() which were both used in the code.
+Datetime module - https://www.w3schools.com/python/python_datetime.asp - this contains the functions .now() and .strftime() which were both used in the code.
 
 ### Week 6 squareroot.py
+The purpose of this program is to find an approximation of the square root of a number. 
 ### Explanation of code:
 I decided to use Newton's Method to approximate the square root, as suggested. I watched the video in the references below to understand how the method works and based my code off that.
 
 Newton's Method requires an initial guess to get the ball rolling, so for the function I made, I had that guess be a mandatory argument that the user had to input. I also had a user inputted argument that acted as a limit to how accurate the result would be. A while loop checks how accurate the current guess is by squaring it and finding the difference between it and the number we are trying to find the square root of. If the difference is less than the limit that the user inputted, the function returned the guess. Otherwise, the guess is passed through Newton's Method and a new guess is approximated. This continues until the difference calculted by the while loop is less than the limit. 
 
 #### References:
-https://www.youtube.com/watch?v=FMCOebUGG94 - video on Newton's Method by BriTheMathGuy on YouTube
+Video on Newton's Method by BriTheMathGuy on YouTube - https://www.youtube.com/watch?v=FMCOebUGG94
 
 ### Week 7 es.py
+The purpose of this program is to count the number of times the letter "e" appears in a text file.
 #### Explanation of code:
 In this code, I decided to count all of the "e"s that appear within the text file, regardless of if they were upper or lower case. To do this, I converted all of the letters to lowercase, using the .lower() function. A further expansion of the code could give the number of upper case and number of lower case in the results. 
 
@@ -73,16 +79,17 @@ A for loop is used to iterate through the lines in the file, and a nested for lo
         
 #### References:
 The 7.1 Lecture video (around the 10.30 mark) showed how to use a for loop to iterate through a text file. I decided to test to see if a nested loop could access the letters within the line and it worked. 
-https://www.programiz.com/python-programming/methods/string/lower - the .lower() function.
+The .lower() function - https://www.programiz.com/python-programming/methods/string/lower
 
 ### Week 8 plottask.py
+The purpose of this program is to plot three different mathematical functions on a graph.
 #### Explanation of code:
-
+The libraries numpy and matplotlib.pyplot are imported. numpy is used to generate data to be used in the plot, matplotlib.pyplot is used to create the plot. 
 #### References:
-        [numpy.linspace]
-        [fonts]
-        [label padding]
-        [label rotation]
-        [setting height and width of figure]
-        [turning minor ticks on]
-        [major and minor tick editing]
+[numpy.linspace]
+[fonts]
+[label padding]
+[label rotation]
+[setting height and width of figure]
+[turning minor ticks on]
+[major and minor tick editing]
