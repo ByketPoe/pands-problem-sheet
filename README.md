@@ -11,9 +11,8 @@ This program works by taking in height and weight measurements from the user and
 These calculations work by assigning the values inputted and calculated to variables, which has been covered in lecture material. 
 The formula for BMI is weight divided by height squared, and is taken from the link in the references.
 #### References:
-Round function - https://www.w3schools.com/python/ref_func_round.asp
-
-BMI formula - https://www.wolframalpha.com/input/?i=bmi
+- Round function - https://www.w3schools.com/python/ref_func_round.asp
+- BMI formula - https://www.wolframalpha.com/input/?i=bmi
         
 
 ### Week 3 secondstring.py
@@ -67,7 +66,7 @@ The datetime module is used for two functions in the code; the function to obtai
             now = datetime.datetime.now()
             day = now.strftime("%w")
 
-The code uses a dictionary to store the days of the week and a link to a corresponding output message to display if it is a weekday or weekend. The key for each item is a number (as a string) from 0-6 and corresponds to a numbering system used in the datetime module to refer to the days of the week, where 0 = Sunday, 1 = Monday etc. The values are lists comprised of two items, the text of the day name and a the vairable that contains the corresponding message. This makes it easier to change the code if I wanted it to print the day instead of the message. 
+The code uses a dictionary to store the days of the week and a link to a corresponding output message to display if it is a weekday or weekend. The key for each item is a number (as a string) from 0-6 and corresponds to a numbering system used in the datetime module to refer to the days of the week, where 0 = Sunday, 1 = Monday etc. The values are lists comprised of two items, the text of the day name and the variable that contains the corresponding message. This makes it easier to change the code if I wanted it to print the day instead of the message. 
 
             daysOfWeek = {"0": ["Sunday", weekendMsg], 
                             "1": ["Monday", weekdayMsg], 
@@ -77,20 +76,20 @@ The code uses a dictionary to store the days of the week and a link to a corresp
                             "5": ["Friday", weekdayMsg], 
                             "6": ["Saturday", weekendMsg]}
 
-The messages used to show if it a weekday or weekend are saved to variables and are called from the dictionary items. This saves me from having to write the messages multiple times. 
+The messages that are used to show if it a weekday or weekend are saved to variables which are called from the second index of the dictionary item list. This saves me from having to write the messages multiple times. 
 
             weekendMsg = "It is the weekend, yay!"
             weekdayMsg = "Yes, unfortunately today is a weekday"
 
 #### References:
-Datetime module - https://www.w3schools.com/python/python_datetime.asp - this contains the functions .now() and .strftime() which were both used in the code.
+- Datetime module - https://www.w3schools.com/python/python_datetime.asp - this contains the functions .now() and .strftime() which were both used in the code.
 
 ### Week 6 squareroot.py
 The purpose of this program is to find an approximation of the square root of a number. 
 ### Explanation of code:
 I decided to use Newton's Method to approximate the square root, as suggested. I watched the video in the references below to understand how the method works and based my code off that.
 
-Newton's Method requires an initial guess to get the ball rolling, so for the function I made, I had that guess be a mandatory argument that the user had to input. 
+Newton's Method requires an initial guess to get the ball rolling, so for the function I made, I have that guess be a mandatory argument that the user had to input. 
             
             def sqrt(num, initGuess, resolution): 
                 xn = initGuess 
@@ -105,7 +104,7 @@ A while loop checks how accurate the current guess is by squaring it and finding
 The rest of the function follows Newton's method according to the video in the reference. The user is asked for the number they want to find the square root of, the initial guess and an 'accuracy limit' so they can decide how close of an answer they want. The result is printed to the user. 
 
 #### References:
-Video on Newton's Method by BriTheMathGuy on YouTube - https://www.youtube.com/watch?v=FMCOebUGG94
+- Video on Newton's Method by BriTheMathGuy on YouTube - https://www.youtube.com/watch?v=FMCOebUGG94
 
 ### Week 7 es.py
 The purpose of this program is to count the number of times the letter "e" appears in a text file.
@@ -114,11 +113,21 @@ In this code, I decided to count all of the "e"s that appear within the text fil
 
             lowletter = letter.lower()
 
-I used a try/except as covered in the lab to deal with the case in which the file does not exist, or the file name is incorrect. If this is the case, the program skips the code until the "except" where it prints an error message informing the user of the issue. Otherwise, the code gets executed as normal and the except gets ignored.
+I used a try/except as covered in the lab to deal with the case in which the file does not exist, or the file name is incorrect. If this is the case, the program skips the code until the "except IO Error" where it prints an error message informing the user of the issue. Otherwise, the code gets executed as normal and the except gets ignored.
         
-The text file is opened using the 'with open()' statements. The file does not need to be appended to or written to, so the file is openend in read only mode. It is also a text file, and we only wish to parse the text within it, so it is opened in text mode. 
+The text file needs to be opened by accessing the terminal inputs. This was done using the fileinput and sys modules. To read the file, the fileinput.input() function is used. This returns the text within the text file in an iterable form, which means I can use a for loop to check each line. 
 
-            with open(fileToParse, "rt") as f:
+            fileToParse = fi.input() 
+
+When I ran the code without inputting a text file name, the .input() function defaulted to sys.stdin, allowing the user to input text from the terminal. I found this difficult to use, so I decided to use error handling to prevent this from happening. I used an if statement to check if there was a second input into the terminal (sys.argv[1:]). The any() function checks if there is anything within the second terminal input, and returns a boolean value. If there is nothing there, the raise statement raises an error. I decided to raise a StopIteration error, to keep it separate from the input/output error mentioned above. This will print a different error message, giving the user relevant information as to what went wrong.
+
+            if not any(sys.argv[1:]):
+                raise StopIteration
+            ...
+            except StopIteration:
+                print('You need to enter the name of a text file into the terminal when you run this program.')
+
+Other options I tried were to use the next() function to try and call the next item in the iterable file object. I was hoping that if no file was input at the terminal, this would throw an error but it did not work. I also tried setting a default text file as an argument in the .input() function, but this meant that incorrect file names were not caught, and I'd rather let the user know that their input was incorrect. 
         
 A for loop is used to iterate through the lines in the file, and a nested for loop is used to iterate through the letters on each line. 
 
@@ -126,21 +135,25 @@ A for loop is used to iterate through the lines in the file, and a nested for lo
                 for letter in line:
                     <code to be executed in loop>
 
-An if statement checks if the letter is "e", if true, a counter is incremented by 1. A function called doAddOne() was written by me to do this inrementation. The results are printed using the print() function.
+An if statement checks if the letter is "e", if true, a counter is incremented by 1. A function called doAddOne() was written by me to do this incrementation. The results are printed using the print() function.
             if lowletter == 'e':
                 count = doAddOne(count)
         
 #### References:
-The 7.1 Lecture video (around the 10.30 mark) showed how to use a for loop to iterate through a text file. I decided to test to see if a nested loop could access the letters within the line and it worked. 
-
-The .lower() function - https://www.programiz.com/python-programming/methods/string/lower
+- The fileinput module - https://www.linuxtopia.org/online_books/programming_books/python_programming/python_ch33s03.html 
+- The sys module - https://docs.python.org/3/library/sys.html
+- The any() function - https://www.codevscolor.com/python-any-check-anything-inside-iterable-true
+- The next() function - https://docs.python.org/3/library/functions.html#next
+- Built-in Exceptions - https://docs.python.org/3/library/exceptions.html
+- The 7.1 Lecture video (around the 10.30 mark) showed how to use a for loop to iterate through a text file. I decided to test to see if a nested loop could access the letters within the line and it worked. 
+- The .lower() function - https://www.programiz.com/python-programming/methods/string/lower
 
 ### Week 8 plottask.py
 The purpose of this program is to plot three different mathematical functions on a graph.
 #### Explanation of code:
 The libraries numpy and matplotlib.pyplot are used. numpy is used to generate data to be used in the plot, matplotlib.pyplot is used to create the plot. I intially tried to use numpy.array() to generate the data as shown in the lab, but the plots that were created did not look right. The lines produced on the plot were angular when they should be curved (i.e. for the squared and cubed functions). I realised the the arrays consisted of 4 integers, so there was not enough data for the plots to generate smooth lines. I found the function numpy.linspace() which returns a series of 50 (by default) evenly spaced float numbers within a specified range. This is more suitable for the needs of the plot and allows the functions to be plotted smoothly. The results of this function are passed to the variable xpoints, as this will be our array of x points used in our function.
 
-The y points are calculated for f(x), g(x) and h(x) and assigned to variables. The points are plotted using the .plot() function, which takes in the x points and the y points. They will all appear on the same plot. The .plot() function also takes in a label argument, which can be used to create a legend, making it easier to know what each line on the plot represents. 
+The y points are calculated for f(x), g(x) and h(x) and assigned to variables. The points for each function are plotted using the .plot() function, which takes in the x points and the y points of each function. They will all appear on the same plot. The .plot() function also takes in a label argument, which can be used to create a legend, making it easier to know what each line on the plot represents. 
 
 Two dictionaries are created and saved to variables. These will be used to format the text used in the title and axis labels. The plot title and axis labels are created using the .title(), .xlabel() and .ylabel() functions. The title/label text is passed as a string to the first argument of the functions. The title will appear above the plot, and the axis labels will appear next to their relevant axes. 
 
@@ -155,7 +168,7 @@ When I generated the plot, I found that a lot of the important information (titl
             plt.figure(num = 1).set_figheight(10)
             plt.figure(num = 1).set_figwidth(20)
 
-The argument num = 1 means that these settings will be applied to the plot that is Figure 1. In this case, there is only one plot, but this is necessary as otherwise this will create a new empty plot with these settings and will not apply these settings to the plot we want. The unit of measurement is in inches, so 10 is 10 inches. This setup fits well on my laptop screen, but might be difficult to view on a smallers screen. 
+The argument num = 1 means that these settings will be applied to the plot that is Figure 1. In this case, there is only one plot, but this is necessary as otherwise this will create a new empty plot with these settings and will not apply these settings to the plot we want. The unit of measurement is in inches, so 10 is 10 inches. This setup fits well on my laptop screen, but might be difficult to view on a smaller screen. 
 
 The .legend() function is used to create the legend that will appear on the plot, making it easier to read and identify what each line represents. It uses the label information provided in the .plot() function. By setting shadow = True, a shadow appears below the legend box which helps it to stand out. 
 
@@ -169,7 +182,7 @@ By default, no gridlines appear on the plot.I think they are useful, so I have m
 
 Using the .grid() function, the settings of the gridlines can be defined. The argument 'which' allows me to specify which kind of gridline I want to change, allowing me to give them separate characteristics. The argument 'lw' allows me to specify line weight. I made the major gridlines thicker than the minor gridlines. The argument 'color' allows me to specify colour. I set both to be black to make the plot uniform and make sure the gridlines were not distracting. The argument 'alpha' allows me to set how visible the line is on a scale from 0 to 1. The minor gridlines are more faded than the major gridlines. 
 
-The .show() function create the plot in a new window according to the settings in the code.
+The .show() function creates the plot in a new window according to the settings in the code.
 
 #### References:
 - The numpy.linspace() function - https://www.geeksforgeeks.org/numpy-linspace-python/
