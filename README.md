@@ -1,15 +1,17 @@
 # pands-problem-sheet
-Submission for PandS problem sheets
+## Emma Farrell's Submission for PandS problem sheets
 
-Week 2 bmi.py 
-    Explanation of code:
-        This program works by taking in height and weight measurements from the user and using them to calculate bmi. The input and print functions and casting data to desired data type (in this case, float) have been covered in lecture material. The round function was found on W3 schools at the link in the reference. This function works by taking in the number to be rounded as well as the number of decimal places that is required: 
-            round(<number>, <number of decimal places>). 
-        These calculations work by assigning the values inputted and calculated to variables, which has been covered in lecture material. 
-        The formula for BMI is weight divided by height squared, and is taken from the link in the references.
-    References:
-        Round function:     https://www.w3schools.com/python/ref_func_round.asp
-        BMI formula:        https://www.wolframalpha.com/input/?i=bmi
+### Week 2 bmi.py 
+#### Explanation of code:
+This program works by taking in height and weight measurements from the user and using them to calculate bmi. The input and print functions and casting data to desired data type (in this case, float) have been covered in lecture material. The round function was found on W3 schools at the link in the reference. This function works by taking in the number to be rounded as well as the number of decimal places that is required: 
+            ''' 
+                round(<number>, <number of decimal places>). 
+            '''
+These calculations work by assigning the values inputted and calculated to variables, which has been covered in lecture material. 
+The formula for BMI is weight divided by height squared, and is taken from the link in the references.
+#### References:
+Round function:     https://www.w3schools.com/python/ref_func_round.asp
+BMI formula:        https://www.wolframalpha.com/input/?i=bmi
         
 
 Week 3 secondstring.py
@@ -54,7 +56,7 @@ Week 6 squareroot.py
     References:
         https://www.youtube.com/watch?v=FMCOebUGG94 - video on Newton's Method by BriTheMathGuy on YouTube
 
-Week 7 numberofEs.py
+Week 7 es.py
     Explanation of code:
         In this code, I decided to count all of the "e"s that appear within the text file, regardless of if they were upper or lower case. To do this, I converted all of the letters to lowercase, using the .lower() function. A further expansion of the code could give the number of upper case and number of lower case in the results. 
 

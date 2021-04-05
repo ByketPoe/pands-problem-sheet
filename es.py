@@ -1,4 +1,4 @@
-# numberofEs.py
+# es.py
 # The purpose of this program is to count the number of times the letter "e" appears in a text file.
 # I decided to count every "e" in the file and not to differentiate between upper and lowercase letters.
 # author: Emma Farrell
