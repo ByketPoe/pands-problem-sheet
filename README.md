@@ -67,3 +67,15 @@ Week 7 numberofEs.py
     References:
         The 7.1 Lecture video (around the 10.30 mark) showed how to use a for loop to iterate through a text file. I decided to test to see if a nested loop could access the letters within the line and it worked. 
         https://www.programiz.com/python-programming/methods/string/lower - the .lower() function.
+
+Week 8 plottask.py
+    Explanation of code:
+
+    References:
+        [numpy.linspace]
+        [fonts]
+        [label padding]
+        [label rotation]
+        [setting height and width of figure]
+        [turning minor ticks on]
+        [major and minor tick editing]
