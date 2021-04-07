@@ -184,6 +184,8 @@ Using the .grid() function, the settings of the gridlines can be defined. The ar
 
 The .show() function creates the plot in a new window according to the settings in the code.
 
+![Figure1](Figure_1.png)
+
 #### References:
 - The numpy.linspace() function - https://www.geeksforgeeks.org/numpy-linspace-python/
 - Fonts - https://matplotlib.org/stable/gallery/text_labels_and_annotations/text_fontdict.html
