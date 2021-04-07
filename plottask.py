@@ -32,7 +32,7 @@ plt.plot(xpoints, hofx, label = 'Cubic Function')
 # Two fonts are defined within dictionaries and set to variables. 
 # This sets the font family which will be used, the colour of the text and the size of the text.
 font1 = {'family':'serif','color':'darkblue','size': 20}
-font2 = {'family':'serif','color':'darkblue','size': 12}
+font2 = {'family':'serif','color':'darkblue','size': 14}
 
 # The plot title and axis labels are created using the .title(), .xlabel() and .ylabel() functions.
 # The title/label text is passed as a string to the first argument of the functions.
@@ -67,7 +67,7 @@ plt.minorticks_on()
 # 'lw' allows me to specify line weight. I made the major gridlines thicker than the minor gridlines. 
 # 'color' allows me to specify colour. I set both to be black to make the plot uniform and make sure the gridlines were not distracting. 
 # 'alpha' allows me to set how visible the line is on a scale from 0 to 1. The minor gridlines are more faded than the major gridlines. 
-plt.grid(which = 'major', lw = 1.5, color = 'black', alpha = 0.5)
+plt.grid(which = 'major', lw = 1.5, color = 'black', alpha = 0.4)
 plt.grid(which = 'minor', lw = 1.0, color = 'black', alpha = 0.1)
 
 # The plt.show() function allows the plot to appear on screen according to all of the specifications given in the code previously. 
